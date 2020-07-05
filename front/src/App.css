@@ -1,0 +1,118 @@
+body {
+  margin: 20px;
+  background-color: azure;
+}
+.header {
+  height: 75px;
+  text-align: center;
+
+  background-image: url("header.png");
+  background-size: cover;
+  background-position-y: -200px;
+  background-repeat: no-repeat;
+  background-blend-mode: lighten;
+}
+.header h1 {
+  opacity: 1;
+  text-decoration: underline;
+  padding-top: 25px;
+  color: crimson;
+  font-family: monospace;
+  margin: auto;
+}
+.user-info {
+  display: flex;
+  justify-content: center;
+}
+.user-forms {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+.meta {
+  display: block;
+  margin: 5px;
+  text-align: center;
+}
+.meta button {
+  margin: 5px;
+}
+.data {
+  text-align: center;
+}
+.data-item {
+  margin-top: 5px;
+
+  display: block;
+  width: auto;
+}
+.data-item span {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.data-item span:hover {
+  color: rgb(83, 83, 255);
+}
+.data button {
+  display: block;
+  width: auto;
+  margin: auto;
+  text-align: center;
+}
+.data-item-tags {
+  font-size: 0.8em;
+  display: inline-block;
+  margin-left: 5px;
+}
+.tags {
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 500px;
+  text-align: center;
+  margin: auto;
+}
+.tags-tag {
+  display: block;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-decoration: underline;
+}
+.tags-tag:hover {
+  cursor: pointer;
+  color: rgb(83, 83, 255);
+}
+.images {
+  display: flex;
+  justify-content: center;
+}
+.image {
+  margin: 3px;
+}
+.single-data {
+  position: relative;
+}
+.single-data button {
+  display: block;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.notification-error {
+  color: red;
+  border: 1px solid red;
+  display: block;
+  text-align: center;
+}
+
+.notification-success {
+  border: 1px solid green;
+  color: green;
+  display: block;
+  text-align: center;
+}

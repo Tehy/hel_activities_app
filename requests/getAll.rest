@@ -1,0 +1,2 @@
+GET https://respa.koe.hel.ninja/v1/
+Content-Type: application/json
