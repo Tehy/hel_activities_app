@@ -1,58 +1,83 @@
 body {
   margin: 20px;
   background-color: azure;
+  border: 1px solid black;
 }
 .header {
+  border-bottom: none;
   height: 75px;
   text-align: center;
-
-  background-image: url("header.png");
-  background-size: cover;
-  background-position-y: -200px;
-  background-repeat: no-repeat;
-  background-blend-mode: lighten;
 }
 .header h1 {
-  opacity: 1;
   text-decoration: underline;
-  padding-top: 25px;
+  padding-top: 35px;
+
   color: crimson;
   font-family: monospace;
   margin: auto;
 }
+.nav-buttons {
+  margin-top: 10px;
+  margin-left: 2px;
+  margin-right: 2px;
+  cursor: pointer;
+  height: 20px;
+}
 .user-info {
   display: flex;
   justify-content: center;
+  font-size: small;
+}
+.user-info button {
+  font-size: x-small;
 }
 .user-forms {
+  padding: 25px;
+  font-size: small;
   display: block;
   margin: auto;
   text-align: center;
 }
 .meta {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
   display: block;
-  margin: 5px;
+  margin-top: 5px;
+
   text-align: center;
 }
-.meta button {
+.meta img {
+  padding-top: 10px;
   margin: 5px;
 }
 .data {
+  background-color: khaki;
   text-align: center;
+  color: black;
+}
+.data button {
+  font-size: x-small;
+  transform: translateY(5px);
 }
 .data-item {
-  margin-top: 5px;
-
+  color: rgb(33, 34, 36);
+  padding-top: 20px;
+  border-top: 1px solid;
+  border-color: rgb(147, 169, 170);
   display: block;
   width: auto;
 }
 .data-item span {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: large;
   cursor: pointer;
   font-weight: bold;
 }
 
 .data-item span:hover {
-  color: rgb(83, 83, 255);
+  text-decoration: underline;
+  color: blue;
 }
 .data button {
   display: block;
@@ -67,10 +92,12 @@ body {
 }
 .tags {
   padding-top: 20px;
+  padding-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 500px;
+  max-width: 500px;
+
   text-align: center;
   margin: auto;
 }
@@ -92,6 +119,12 @@ body {
   margin: 3px;
 }
 .single-data {
+  border-top: 1px solid black;
+  transform: translateY(83px);
+  margin-top: 25px;
+  padding: 20px;
+
+  background-color: khaki;
   position: relative;
 }
 .single-data button {
@@ -104,6 +137,8 @@ body {
   text-align: center;
 }
 .notification-error {
+  font-size: large;
+  font-weight: bolder;
   color: red;
   border: 1px solid red;
   display: block;
@@ -111,6 +146,8 @@ body {
 }
 
 .notification-success {
+  font-size: large;
+  font-weight: bolder;
   border: 1px solid green;
   color: green;
   display: block;

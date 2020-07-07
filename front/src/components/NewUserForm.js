@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import newUserCreate from "../services/user";
-import { set } from "mongoose";
 
 const NewUserForm = ({ setShowNewUserForm, setNotification }) => {
   const [username, setUsername] = useState("demo-user");
@@ -13,7 +12,7 @@ const NewUserForm = ({ setShowNewUserForm, setNotification }) => {
       console.log("response", response.message);
       console.log("response", response); */
       if (response.status === 200) {
-        console.log("response success", response);
+        //console.log("response success", response);
         setNotification("user-created");
         setUsername("");
         setPassword("");

@@ -8,11 +8,12 @@ const userRouter = require("./controllers/user");
 const loginRouter = require("./controllers/login");
 const dbRouter = require("./controllers/db");
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
 
 app.use(cors());
+app.use(express.static("build"));
 app.use(express.json());
-app.use(express.urlencoded());
+//app.use(express.urlencoded());
+
 app.use("/api/data", dataRouter);
 app.use("/api/user", userRouter);
 app.use("/api/login", loginRouter);
@@ -31,5 +32,5 @@ mongoose
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-  console.log("Example app listening on port " + PORT);
+  console.log("App listening on port " + PORT);
 });

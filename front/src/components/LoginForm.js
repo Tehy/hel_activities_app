@@ -12,13 +12,11 @@ const LoginForm = ({ userSet, setShowLoginForm, setNotification }) => {
       //console.log("response", response);
       if (response.status === 200) {
         userSet(response.data);
-        setPassword("");
-        setUsername("");
+        //setPassword("");
+        //setUsername("");
         setNotification("success");
       } else {
         setNotification("error");
-        //console.log("wrong username or password");
-        //TODO display error
       }
     }
   };

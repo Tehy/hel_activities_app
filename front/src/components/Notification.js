@@ -3,13 +3,12 @@ import React from "react";
 const Notification = ({ type }) => {
   let noteType;
   let note;
-  //TODO login error, usercreate error->username taken,
   if (type === "error") {
     noteType = "notification-error";
     note = "wrong username or password";
   } else if (type === "success") {
     noteType = "notification-success";
-    note = "log in success";
+    note = "login success";
   } else if (type === "empty") {
     noteType = "notification-error";
     note = "cannot have empty fields";

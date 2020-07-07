@@ -1,6 +1,6 @@
 import React from "react";
 
-const Tags = ({ tags, updateTag, tagOnClick }) => {
+const PageTags = ({ tags, updateTag, tagOnClick }) => {
   return (
     <>
       <div className="tags">
@@ -23,4 +23,4 @@ const Tags = ({ tags, updateTag, tagOnClick }) => {
     </>
   );
 };
-export default Tags;
+export default PageTags;

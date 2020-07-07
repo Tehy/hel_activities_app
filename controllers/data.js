@@ -59,9 +59,6 @@ dataRouter.get("/limit/:range", async (req, res) => {
 });
 dataRouter.get("/tag/:tag", async (req, res) => {
   console.log("dataRouterTAG");
-  //console.log("req.params", req.params);
-  //console.log("req.params", req.params.tag);
-  //console.log("req.params", req.params.tag.replace(":", "%3A"));
 
   if (req) {
     try {
@@ -147,10 +144,7 @@ dataRouter.get("/items/:items", async (req, res) => {
       var tags = {};
       for (var arr of tagsArray) {
         for (var item of arr) {
-          // TODO ?
-          //if (!tags[item.id]) {
           tags[item.id] = item.name;
-          //}
         }
       }
       const savedItemsData = {
@@ -160,8 +154,8 @@ dataRouter.get("/items/:items", async (req, res) => {
         data: resultArray,
         tags,
       };
-      //console.log("savedItemsData", savedItemsData);
-      res.json(JSON.stringify(savedItemsData));
+      //console.log("savedItemsData", JSON.stringify(savedItemsData));
+      res.send(JSON.stringify(savedItemsData));
     }
   }
 });

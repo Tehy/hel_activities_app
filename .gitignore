@@ -1,5 +1,8 @@
 node_modules/
+build/
 .env
+.deployment
+.vscode/
 KNOWNBUGS
 TODO
 NOTES

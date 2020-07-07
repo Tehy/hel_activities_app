@@ -34,15 +34,10 @@ userRouter.post("/", async (request, response, next) => {
 
     response.json(savedUser);
   } catch (error) {
-    if (error.message.includes("duplicate")) {
-      console.log("DUPLICATE");
-      //const err = { data: "duplicate" };
+    if (error.message.includes("unique")) {
+      console.log("DUPLICATE username");
       response.status(401).send(error.message);
     }
-    /* if (error.includes("duplicate key error")) {
-      console.log("DULICATE KEY ERROR");
-      response.json("duplicate");
-    } */
     next(error);
   }
 });

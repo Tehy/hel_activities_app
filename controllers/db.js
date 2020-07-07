@@ -9,12 +9,12 @@ dbRouter
     const body = req.body;
     //console.log("DB POST req", req);
     //console.log("DB POST req.params", req.params);
-    console.log("DB POST body", body);
+    //console.log("DB POST body", body);
     const user = await User.findOne({ username: body.username });
-    console.log("user", user);
+    //console.log("user", user);
     if (!user.savedItems.includes(body.id)) {
       user.savedItems.push(body.id);
-      console.log("Saving item ", body.id);
+      console.log("dbRouter POST ", body.id);
       await user.save();
       res.json(body.id);
     } else {
@@ -34,14 +34,14 @@ dbRouter
     //console.log("DB POST req.params", req.params);
     //console.log("DB DELETE body", body);
     const user = await User.findOne({ username: body.username });
-    console.log("user.savedItems", user.savedItems);
+    //console.log("user.savedItems", user.savedItems);
 
     if (user.savedItems.includes(body.id)) {
       const index = user.savedItems.indexOf(body.id);
       user.savedItems.splice(index, 1);
 
       //TODO check index>-1
-      console.log("Deleting item ", body.id);
+      console.log("dbRouter DELETE ", body.username, body.id);
       await user.save();
       res.status(200).json(body.id);
     } else {

@@ -16,7 +16,7 @@ export default function DisplaySingle({ data, backBtnOnclick }) {
       {data.info_url && (
         <>
           Linkki:{" "}
-          <a href={data.info_url} target="_blank">
+          <a href={data.info_url} target="_blank" rel="noopener noreferrer">
             {data.info_url}
           </a>{" "}
           <br />
@@ -24,7 +24,11 @@ export default function DisplaySingle({ data, backBtnOnclick }) {
       )}
       {data.modified_at && (
         <>
-          Muokattu: {data.modified_at} <br />
+          Muokattu:{" "}
+          {data.modified_at
+            .substring(0, data.modified_at.length - 5)
+            .replace("T", " ")}{" "}
+          <br />
         </>
       )}
       {data.location && (
@@ -50,11 +54,17 @@ export default function DisplaySingle({ data, backBtnOnclick }) {
 
       {data.description.images && (
         <>
-          <p>Kuvia:</p>
+          <p>Tapahtuma kuvia:</p>
           <div className="images">
             {data.description.images.map((i) => (
-              <a className="image" href={i.url} target="_blank" key={i.url}>
-                <img src={i.url} width="200" className="img" />
+              <a
+                className="image"
+                href={i.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={i.url}
+              >
+                <img src={i.url} width="200" className="img" alt="activity" />
               </a>
             ))}{" "}
             <br />

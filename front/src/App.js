@@ -72,9 +72,13 @@ function App() {
     updateCookie(userObject);
     setShowNewUserForm(false);
     setShowLoginForm(false);
+    (async () => {
+      setData(await getData());
+    })();
   };
   const userUnSet = () => {
     setUser();
+    setData();
     localStorage.removeItem("loggedInUser");
   };
   const setNotification = (type) => {
