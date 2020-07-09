@@ -1,10 +1,12 @@
 node_modules/
-./build/
-./front/build/
+build/
+front/build/
+front/node_modules/
 .env
 .deployment
 .vscode/
-./yarn
-.yarn.yml
+.yarn/
+.yarnrc.yml
 TODO
 NOTES
+KNOWNBUGS
