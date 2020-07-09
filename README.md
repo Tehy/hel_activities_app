@@ -28,4 +28,4 @@ environment variables needed /.env.example</br>
 <img src="demopics/3results.jpg" width="400">
 <img src="demopics/5userdata.jpg" width="400">
 <img src="demopics/6tagsearch.jpg" width="400">
-<img src="demopics/7singledata" width="400">
+<img src="demopics/7singledata.jpg" width="400">
