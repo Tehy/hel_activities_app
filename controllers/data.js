@@ -3,9 +3,9 @@ const http = require("http");
 const request = require("request");
 const requestPromise = require("request-promise-native");
 // http://open-api.myhelsinki.fi/v1/activities
+// http://open-api.myhelsinki.fi/v1/activity
 dataRouter.get("/", async (req, res) => {
   console.log("dataRouterAll(start0&limit10)");
-  console.log("req.params", req.params);
   if (req) {
     try {
       var headers = {
@@ -19,7 +19,6 @@ dataRouter.get("/", async (req, res) => {
 
       function callback(error, response, body) {
         if (!error && response.statusCode == 200) {
-          //console.log(body);
           res.json(body);
         }
       }
@@ -154,8 +153,7 @@ dataRouter.get("/items/:items", async (req, res) => {
         data: resultArray,
         tags,
       };
-      //console.log("savedItemsData", JSON.stringify(savedItemsData));
-      res.send(JSON.stringify(savedItemsData));
+      res.json(JSON.stringify(savedItemsData));
     }
   }
 });

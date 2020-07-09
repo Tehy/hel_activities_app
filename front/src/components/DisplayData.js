@@ -16,6 +16,7 @@ const DisplayData = ({
   const [searchedTag, setSearchedTag] = useState();
 
   const allData = JSON.parse(state);
+
   const meta = allData.meta;
   const data = allData.data;
   const tags = Object.entries(allData.tags);

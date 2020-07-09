@@ -1,0 +1,2 @@
+GET http://localhost:3001/api/data/id/1e21912f-7027-46bc-8730-6b25a20b2024
+Content-Type: application/json

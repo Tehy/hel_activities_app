@@ -6,24 +6,32 @@ const dataRouter = require("./controllers/data");
 const userRouter = require("./controllers/user");
 const loginRouter = require("./controllers/login");
 const dbRouter = require("./controllers/db");
+const mongoose = require("mongoose");
 //const middleware = require("./utils/middleware");
 //const logger = require('./utils/logger')
-const mongoose = require("mongoose");
 
-mongoose.connect(config.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.set("useCreateIndex", true);
+mongoose
+  .connect(config.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(console.log("DB connected"))
+  .catch((error) => {
+    console.log("DB error", error);
+  });
 
 app.use(cors());
+app.use(express.static("build"));
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded()); // TODO test remove
 app.use("/api/data", dataRouter);
 app.use("/api/user", userRouter);
 app.use("/api/login", loginRouter);
 app.use("/db", dbRouter);
 
-/* app.use(middleware.unknownEndpoint)
+/* TODO ./utils/middleware.js
+ app.use(middleware.unknownEndpoint)
 app.use(middleware.errorHandler) */
 
 module.exports = app;

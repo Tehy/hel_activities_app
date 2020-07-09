@@ -26,5 +26,5 @@ export const getDataRange = async (range) => {
 export const getSavedItems = async (items) => {
   //console.log("getSavedItems items", items);
   const response = await axios.get(baseUrl + "/items/" + items);
-  return JSON.stringify(response.data);
+  return response.data;
 };

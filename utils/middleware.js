@@ -1,4 +1,4 @@
 //TODO
-// move middleware
+// move middleware app.js here
 // logger
 //

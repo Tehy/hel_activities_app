@@ -17,6 +17,7 @@ const NewUserForm = ({ setShowNewUserForm, setNotification }) => {
         setUsername("");
         setPassword("");
       } else if (response.message) {
+        //console.log("response.message", response.message);
         if (response.message.includes("401")) setNotification("username-error");
       }
     } else {

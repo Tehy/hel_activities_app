@@ -1,8 +1,10 @@
 node_modules/
-build/
+./build/
+./front/build/
 .env
 .deployment
 .vscode/
-KNOWNBUGS
+./yarn
+.yarn.yml
 TODO
 NOTES
