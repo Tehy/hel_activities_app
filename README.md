@@ -22,10 +22,10 @@ App uses open data from http://open-api.myhelsinki.fi/ activities database v1act
 environment variables needed /.env.example</br>
 /front/ $ npm install</br>
 
-# Screens
+# Screenshots
 
-![App screenshot](demopics/1main.jpg?raw=true "Main")</br>
-![App screenshot](demopics/3results.jpg?raw=true "Results")</br>
-![App screenshot](demopics/5userdata.jpg?raw=true "User items")</br>
-![App screenshot](demopics/6tagsearch.jpg?raw=true "Tag search")</br>
-![App screenshot](demopics/7singledata.jpg?raw=true "Single data view")
+<img src="demopics/1main.jpg" width="400">
+<img src="demopics/3results.jpg" width="400">
+<img src="demopics/5userdata.jpg" width="400">
+<img src="demopics/6tagsearch.jpg" width="400">
+<img src="demopics/7singledata" width="400">
