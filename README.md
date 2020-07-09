@@ -14,7 +14,7 @@ App uses open data from http://open-api.myhelsinki.fi/ activities database v1act
 
 ## Tests
 
-- JEST, Supertest
+- Jest, Supertest
 
 # Installation
 
