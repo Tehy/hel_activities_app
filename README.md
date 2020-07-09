@@ -24,8 +24,8 @@ environment variables needed /.env.example</br>
 
 # Screens
 
-![App screenshot](/demopics/1main.jpg?raw=true "Main")</br>
-![App screenshot](/demopics/3results.jpg?raw=true "Results")</br>
-![App screenshot](/demopics/5userdata.jpg?raw=true "User items")</br>
-![App screenshot](/demopics/6tagsearch.jpg?raw=true "Tag search")</br>
-![App screenshot](/demopics/7singledata.jpg?raw=true "Single data view")
+![App screenshot](demopics/1main.jpg?raw=true "Main")</br>
+![App screenshot](demopics/3results.jpg?raw=true "Results")</br>
+![App screenshot](demopics/5userdata.jpg?raw=true "User items")</br>
+![App screenshot](demopics/6tagsearch.jpg?raw=true "Tag search")</br>
+![App screenshot](demopics/7singledata.jpg?raw=true "Single data view")
