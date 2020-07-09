@@ -24,8 +24,12 @@ body {
   height: 20px;
 }
 .user-info {
-  display: flex;
-  justify-content: center;
+  display: block;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+  text-align: center;
   font-size: small;
 }
 .user-info button {
@@ -113,6 +117,7 @@ body {
 }
 .images {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 .image {
@@ -122,8 +127,8 @@ body {
   border-top: 1px solid black;
   transform: translateY(83px);
   margin-top: 25px;
+  margin-bottom: 25px;
   padding: 20px;
-
   background-color: khaki;
   position: relative;
 }
@@ -136,20 +141,19 @@ body {
   right: 0;
   text-align: center;
 }
-.notification-error {
+#notification {
+  margin-top: 25px;
   font-size: large;
   font-weight: bolder;
-  color: red;
-  border: 1px solid red;
   display: block;
   text-align: center;
 }
+.notification-error {
+  color: red;
+  border: 1px solid red;
+}
 
 .notification-success {
-  font-size: large;
-  font-weight: bolder;
   border: 1px solid green;
   color: green;
-  display: block;
-  text-align: center;
 }

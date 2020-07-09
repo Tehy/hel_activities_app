@@ -19,6 +19,10 @@ const Notification = ({ type }) => {
     noteType = "notification-success";
     note = "user created";
   }
-  return <div className={noteType}>{note}</div>;
+  return (
+    <div className={noteType} id="notification">
+      {note}
+    </div>
+  );
 };
 export default Notification;
