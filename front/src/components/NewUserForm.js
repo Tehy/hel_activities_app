@@ -2,22 +2,18 @@ import React, { useState } from "react";
 import newUserCreate from "../services/user";
 
 const NewUserForm = ({ setShowNewUserForm, setNotification }) => {
-  const [username, setUsername] = useState("demo-user");
-  const [password, setPassword] = useState("demo-user");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const createUser = async (e) => {
     e.preventDefault();
     if (username !== "" && password !== "") {
       const response = await newUserCreate({ username, password });
-      /* console.log("response", typeof response);
-      console.log("response", response.message);
-      console.log("response", response); */
+
       if (response.status === 200) {
-        //console.log("response success", response);
         setNotification("user-created");
         setUsername("");
         setPassword("");
       } else if (response.message) {
-        //console.log("response.message", response.message);
         if (response.message.includes("401")) setNotification("username-error");
       }
     } else {
