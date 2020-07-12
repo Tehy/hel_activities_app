@@ -1,5 +1,6 @@
 import React from "react";
 
+// Button to save or remove item from user savedItems
 const ButtonSaveRemove = ({
   activityId,
   user,

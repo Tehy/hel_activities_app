@@ -3,6 +3,9 @@ body {
   background-color: azure;
   border: 1px solid black;
 }
+.loading {
+  text-align: center;
+}
 .header {
   border-bottom: none;
   height: 75px;

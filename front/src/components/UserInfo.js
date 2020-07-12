@@ -12,7 +12,9 @@ const UserInfo = ({ logout, username, savedItems, updateData }) => {
         {savedItems.length > 0 ? (
           <button
             onClick={async () => {
+              updateData(); // effectively displays "Loading..."
               //TODO setLoading(true)
+
               updateData(await getSavedItems(savedItems));
             }}
           >

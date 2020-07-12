@@ -8,7 +8,6 @@ const NewUserForm = ({ setShowNewUserForm, setNotification }) => {
     e.preventDefault();
     if (username !== "" && password !== "") {
       const response = await newUserCreate({ username, password });
-
       if (response.status === 200) {
         setNotification("user-created");
         setUsername("");

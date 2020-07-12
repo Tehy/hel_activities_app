@@ -7,8 +7,11 @@ const userRouter = require("./controllers/user");
 const loginRouter = require("./controllers/login");
 const dbRouter = require("./controllers/db");
 const mongoose = require("mongoose");
+/* TODO ./utils/middleware.js
 //const middleware = require("./utils/middleware");
 //const logger = require('./utils/logger')
+ app.use(middleware.unknownEndpoint)
+app.use(middleware.errorHandler) */
 
 mongoose.set("useCreateIndex", true);
 mongoose
@@ -24,14 +27,10 @@ mongoose
 app.use(cors());
 app.use(express.static("build"));
 app.use(express.json());
-app.use(express.urlencoded()); // TODO test remove
+//app.use(express.urlencoded()); <-- deprecated?, included in express.json()
 app.use("/api/data", dataRouter);
 app.use("/api/user", userRouter);
 app.use("/api/login", loginRouter);
 app.use("/db", dbRouter);
-
-/* TODO ./utils/middleware.js
- app.use(middleware.unknownEndpoint)
-app.use(middleware.errorHandler) */
 
 module.exports = app;

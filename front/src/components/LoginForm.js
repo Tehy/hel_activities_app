@@ -7,9 +7,7 @@ const LoginForm = ({ userSet, setShowLoginForm, setNotification }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     if (username !== "" && password !== "") {
-      //const response = login({ username, password });
       const response = await login({ username, password });
-      //console.log("response", response);
       if (response.status === 200) {
         userSet(response.data);
         //setPassword("");

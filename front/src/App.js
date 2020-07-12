@@ -14,23 +14,29 @@ function App() {
   const [showNewUserForm, setShowNewUserForm] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [showNotification, setShowNotification] = useState();
+
+  // Notification trigger
   useEffect(() => {
     setTimeout(() => {
       setShowNotification();
     }, 4000);
   }, [showNotification]);
+
+  // on load, fetch data, check cookie for user info
+  // TODO if not user, dont load data
   useEffect(() => {
     (async () => {
-      setData(await getData());
       if (localStorage.getItem("loggedInUser")) {
-        //console.log("LOADING COOKIE");
+        setData(await getData());
         const userObject = JSON.parse(localStorage.getItem("loggedInUser"));
         setUser(userObject);
       }
     })();
   }, []);
-  const updateData = (x) => {
-    setData(x);
+
+  // update data state to update DisplayData component
+  const updateData = (data) => {
+    setData(data);
   };
   const updateCookie = (userObject) => {
     localStorage.setItem("loggedInUser", JSON.stringify(userObject));
@@ -66,6 +72,8 @@ function App() {
       ? (setShowLoginForm(false), setShowNewUserForm(true))
       : setShowNewUserForm(true);
   };
+
+  // set user, hide login/create user forms, fetch data
   const userSet = (userObject) => {
     // TODO refactor odd function
     setUser(userObject);
@@ -76,17 +84,21 @@ function App() {
       setData(await getData());
     })();
   };
+
+  // logout user, delete cookie data
   const userUnSet = () => {
     setUser();
     setData();
     localStorage.removeItem("loggedInUser");
   };
+  // set notification type
   const setNotification = (type) => {
     setShowNotification(type);
   };
   const notification = (type) => {
     return <Notification type={type} />;
   };
+  // show user related functionalities
   const userFunctions = () => {
     return user ? (
       <UserInfo
@@ -136,7 +148,7 @@ function App() {
           </div>
         </>
       ) : (
-        <h2>Loading...</h2>
+        <h2 className="loading">Loading...</h2>
       )}
     </>
   );

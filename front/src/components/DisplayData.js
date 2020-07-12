@@ -14,42 +14,53 @@ const DisplayData = ({
 }) => {
   const [prevRange, setPrevRange] = useState("limit=10&start=0");
   const [searchedTag, setSearchedTag] = useState();
-
   const allData = JSON.parse(state);
-
   const meta = allData.meta;
   const data = allData.data;
   const tags = Object.entries(allData.tags);
 
+  // update data with previous view
   const backBtnOnclick = async () => {
     updateState(await getDataRange(prevRange));
   };
+
+  // update data with search by tag
   const tagOnClick = async (tag) => {
     updateState(await getDataTag(tag));
   };
 
+  // set searched tag
   const updateTag = async (tag) => {
     setSearchedTag(tag);
   };
 
+  // delete item from user savedItems
   const removeBtnOnclick = async (user, activityId) => {
+    // db delete item
     await deleteItem(activityId, user.username);
     //TODO check response status -> removeUserItem(user, activityId);
+
+    // session delete item
     removeUserItem(user, activityId);
   };
   const saveBtnOnclick = async (user, activityId) => {
+    // db save item
     await saveItem(activityId, user.username);
     //TODO check response status -> updateUserWithItem(user, activityId);
+
+    // session save item
     updateUserWithItem(user, activityId);
   };
 
   return (
     <>
+      {/* if meta -> received data is list and show meta info */}
+      {/* META INFO START */}
       {meta && (
         <div className="meta">
           {meta.count && (
             <div className="count">
-              {meta.count}{" "}
+              {meta.count} {/* if searchedTag -> show searched tag */}
               {searchedTag && (
                 <div
                   style={{ fontWeight: "bold", display: "inline" }}
@@ -111,28 +122,30 @@ const DisplayData = ({
           )}
         </div>
       )}
+      {/* META INFO END */}
       {/* if data -> multiple -> data.map | else -> DisplaySingle */}
       {data ? (
         <>
           <div className="data">
             {data.map((x) => (
               <div className="data-item" key={x.id}>
+                {/* Activity name */}
                 <span
                   onClick={async () => {
+                    /* update data with single data -> DisplaySingle */
                     updateState(await getDataId(x.id));
                   }}
                 >
                   {x.name.fi}
                 </span>
                 <br />
-
+                {/* Activity tags */}
                 {x.tags.map((t) => (
                   <div className="data-item-tags" key={t.id}>
                     {t.name}{" "}
                   </div>
                 ))}
-                {/* {x.id} */}
-
+                {/* If user show button */}
                 {user && (
                   <ButtonSaveRemove
                     activityId={x.id}
@@ -145,10 +158,15 @@ const DisplayData = ({
               </div>
             ))}
           </div>
+          {/* Page Tags */}
+
           <PageTags tags={tags} updateTag={updateTag} tagOnClick={tagOnClick} />
         </>
       ) : (
-        <DisplaySingle data={allData} backBtnOnclick={backBtnOnclick} />
+        <>
+          {/* Display Single data page */}
+          <DisplaySingle data={allData} backBtnOnclick={backBtnOnclick} />
+        </>
       )}
     </>
   );
