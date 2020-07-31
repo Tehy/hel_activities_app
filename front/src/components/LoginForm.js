@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import login from "../services/login";
 
 const LoginForm = ({ userSet, setShowLoginForm, setNotification }) => {
-  const [username, setUsername] = useState("demo-user");
-  const [password, setPassword] = useState("demo-user");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const handleLogin = async (e) => {
     e.preventDefault();
     if (username !== "" && password !== "") {

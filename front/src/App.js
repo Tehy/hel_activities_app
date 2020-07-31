@@ -63,15 +63,20 @@ function App() {
     updateCookie(updtUser);
   };
   const showLoginFormToggle = () => {
+    /* REMOVED due to app service plan change
     return showNewUserForm
       ? (setShowLoginForm(true), setShowNewUserForm(false))
-      : setShowLoginForm(true);
+      : setShowLoginForm(true); */
+
+    return setShowLoginForm(true);
   };
+  /* REMOVED due to app service plan change
   const showNewUserFormToggle = () => {
     return showLoginForm
       ? (setShowLoginForm(false), setShowNewUserForm(true))
       : setShowNewUserForm(true);
   };
+  */
 
   // set user, hide login/create user forms, fetch data
   const userSet = (userObject) => {
@@ -110,7 +115,10 @@ function App() {
     ) : (
       <div className="user-forms">
         <button onClick={showLoginFormToggle}>Login</button>
-        <button onClick={showNewUserFormToggle}>Create User</button>
+
+        {/*
+        REMOVED due to app service plan change
+        <button onClick={showNewUserFormToggle}>Create User</button> */}
         {showLoginForm && (
           <LoginForm
             setNotification={setNotification}
@@ -118,12 +126,13 @@ function App() {
             setShowLoginForm={setShowLoginForm}
           />
         )}
+        {/* REMOVED due to app service plan change
         {showNewUserForm && (
           <NewUserForm
             setNotification={setNotification}
             setShowNewUserForm={setShowNewUserForm}
           />
-        )}
+        )} */}
       </div>
     );
   };
