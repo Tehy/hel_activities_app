@@ -2,7 +2,7 @@
   "data": {
     "some_data": "data about portfolio resources",
     "live": {
-      "status": true,
+      "status": false,
       "link": "https://hel-activities.azurewebsites.net/"
     }
   }
