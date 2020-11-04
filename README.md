@@ -5,7 +5,7 @@ App uses open data from http://open-api.myhelsinki.fi/ activities database v1act
 
 ## Live
 
-https://hel-activities.azurewebsites.net/
+~~https://hel-activities.azurewebsites.net/~~
 
 ### User credentials
 
